@@ -1,6 +1,5 @@
-(require 'paredit)
-(add-hook 'clojure-mode-hook 'paredit-mode)
-(add-hook 'clojurescript-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'smartparens-mode)
+(add-hook 'clojurescript-mode-hook 'smartparens-mode)
 
 (require 'rainbow-delimiters)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
