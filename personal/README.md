@@ -8,5 +8,6 @@ Packages to install manually (probably before `personal/preload/init.el` establi
 
 - `cider` (though perhaps not: have now enabled `prelude-clojure`)
 - `rainbow-delimiters`
+- Optional: `keycast` to show key strokes
 
 ## TODO
