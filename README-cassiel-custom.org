@@ -5,10 +5,11 @@
 ** [2022-02-02 Wed]
 *** SETUP
 
-- Custom install: fork and then download/sync the =master= branch, link into =~/.emacs.d=
-- Launch Emacs, let it do its setup (make sure SSH is not blocked) - this all seems to be into external or gitignored folders so no Git changes to =master= seem to take place
-- Create and switch to =custom-cassiel= branch for any changes - starting with this =README= file
+- Custom install: fork and then download/sync the =master= branch, link into =~/.emacs.d=.
+- Launch Emacs, let it do its setup (make sure SSH is not blocked) - this all seems to be into external or gitignored folders so no Git changes to =master= seem to take place.
+- Create and switch to =custom-cassiel= branch for any changes - starting with this =README= file.
 
 *** CLOJURE
 
-- Copy =sample/prelude-modules.el= to root directory, uncomment =prelude-clodure=. Evaluate the statement with =C-x C-e= - for some reason this file isn't loading on Emacs launch. Once the package installation is done, the loading seeme to persist - so I'm not sure we need to copy =prelude-modules.el= at all. It's currently renamed out of the way
+- Copy =sample/prelude-modules.el= to root directory, uncomment =prelude-clodure=. Evaluate the statement with =C-x C-e= - for some reason this file isn't loading on Emacs launch. Once the package installation is done, the loading seeme to persist - so I'm not sure we need to copy =prelude-modules.el= at all. It's currently renamed out of the way.
+- Need Leiningen in the shell search path, obviously. Homebrew has it. Test with =lein repl=.
