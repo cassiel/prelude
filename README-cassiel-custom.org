@@ -2,8 +2,14 @@
 #+STARTUP: indent
 
 * PRELUDE: CUSTOMISATION LOG
+** [2022-02-04 Fri]
+*** MORE CLOJURE
+
+- See =init.el=: also turned on smartparens strict mode for Clojure (need to test it for ClojureScript - we may only need the one line).
+
 ** [2022-02-03 Thu]
 *** CUSTOM / CLOJURE
+
 - Added =personal/preload/init.el=: enabled rainbow delimiters (this might not work until clojure mode is enabled) and some customisation of Projectile.
 
 ** [2022-02-02 Wed]
