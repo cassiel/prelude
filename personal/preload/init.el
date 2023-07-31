@@ -11,3 +11,11 @@
 (def-projectile-commander-method ?\C-?
   "Go back to project selection."
   (projectile-switch-project))
+
+;; Replace shift/nudge key shortcuts:
+(add-hook 'org-mode-hook
+          (lambda ()
+            (local-set-key (kbd "A-<left>") 'org-shiftleft)
+            (local-set-key (kbd "A-<right>") 'org-shiftright)
+            (local-set-key (kbd "A-<up>") 'org-shiftup)
+            (local-set-key (kbd "A-<down>") 'org-shiftdown)))
