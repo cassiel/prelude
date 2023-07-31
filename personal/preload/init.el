@@ -1,11 +1,16 @@
+;; (add-to-list 'package-archives
+;;             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+;; Manual install (MELPA):
 (require 'rainbow-delimiters)
+
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojurescript-mode-hook 'rainbow-delimiters-mode)
 
 (add-hook 'clojure-mode-hook 'turn-on-smartparens-strict-mode)
 (add-hook 'clojurescript-mode-hook 'turn-on-smartparens-strict-mode)
 
-;; Commander when switching projects:
+;; Commander when switching projects (manual install):
 (require 'projectile)
 (setq projectile-switch-project-action 'projectile-commander)
 (def-projectile-commander-method ?\C-?
