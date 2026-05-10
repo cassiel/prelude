@@ -109,8 +109,11 @@
          ;; Other custom bindings
          ("M-y" . consult-yank-pop)                ;; orig. yank-pop
          ;; M-g bindings (goto-map)
-         ("M-g e" . consult-compile-error)
-         ("M-g f" . consult-flymake)
+         ;; Note: M-g e and M-g f are intentionally omitted from consult's
+         ;; recommended bindings to avoid clobbering Prelude's long-standing
+         ;; avy bindings (avy-goto-word-0 and avy-goto-line).  Bind
+         ;; consult-compile-error / consult-flymake in your personal config
+         ;; if you'd rather have them.
          ("M-g g" . consult-goto-line)             ;; orig. goto-line
          ("M-g M-g" . consult-goto-line)           ;; orig. goto-line
          ("M-g o" . consult-outline)               ;; Alternative: consult-org-heading
@@ -126,7 +129,7 @@
          ("M-s r" . consult-ripgrep)
          ("M-s l" . consult-line)
          ("M-s L" . consult-line-multi)
-         ("M-s m" . consult-multi-occur)
+         ("M-s m" . multi-occur)
          ("M-s k" . consult-keep-lines)
          ("M-s u" . consult-focus-lines)))
 

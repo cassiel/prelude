@@ -47,7 +47,10 @@
 ;; (require 'prelude-helm) ;; Interface for narrowing and search
 ;; (require 'prelude-helm-everywhere) ;; Enable Helm everywhere
 (require 'prelude-company)
+;; (require 'prelude-corfu) ;; Lightweight modern alternative to Company (mutually exclusive with prelude-company)
+;; (require 'prelude-apheleia) ;; Async, unified format-on-save
 ;; (require 'prelude-key-chord) ;; Binds useful features to key combinations
+;; (require 'prelude-eglot-booster) ;; Speeds up Eglot via emacs-lsp-booster (requires the binary)
 
 ;;; Vim emulation
 ;;
@@ -97,7 +100,9 @@
 (require 'prelude-yaml)
 
 ;;; Misc
+;; (require 'prelude-ai) ;; LLM-backed chat via gptel
 ;; (require 'prelude-erc) ;; A popular Emacs IRC client
+;; (require 'prelude-forge) ;; GitHub/GitLab/Gitea PRs and issues via Magit
 
 (provide 'prelude-modules)
 ;;; prelude-modules.el ends here

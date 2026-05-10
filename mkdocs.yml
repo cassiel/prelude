@@ -13,7 +13,10 @@ nav:
         - Programming: modules/programming.md
         - Lisp Base: modules/lisp.md
         - LSP: modules/lsp.md
+        - Eglot Booster: modules/eglot-booster.md
         - Company: modules/company.md
+        - Corfu: modules/corfu.md
+        - Apheleia (Format-on-save): modules/apheleia.md
     - Programming Languages:
         - C/C++: modules/c.md
         - Clojure: modules/clojure.md
@@ -49,8 +52,10 @@ nav:
         - Ivy: modules/ivy.md
         - Vertico: modules/vertico.md
     - Other Modules:
+        - AI Assistant: modules/ai.md
         - ERC (IRC): modules/erc.md
         - Evil (Vim): modules/evil.md
+        - Forge (PRs/Issues): modules/forge.md
         - Key Chord: modules/key_chord.md
         - Literate Programming: modules/literate-programming.md
         - Org Mode: modules/orgmode.md

@@ -2,6 +2,32 @@
 
 # Change log
 
+## Unreleased
+
+### New features
+
+- Add `prelude-ai` module: a thin wrapper around [gptel](https://github.com/karthink/gptel) for LLM-backed chat (Claude, GPT, Gemini, Ollama, etc.). Binds `gptel-menu` to `C-c q`. Backends and API keys are configured in personal config -- see the module documentation for examples.
+- Add `prelude-forge` module: enables [Forge](https://github.com/magit/forge) on top of Magit so you can read and reply to GitHub/GitLab/Gitea pull requests and issues without leaving Emacs.
+- Add `prelude-eglot-booster` module: speeds up Eglot via the [emacs-lsp-booster](https://github.com/blahgeek/emacs-lsp-booster) wrapper. The Emacs side ([eglot-booster](https://github.com/jdtsmith/eglot-booster)) is auto-installed via `package-vc-install` when the booster binary is on `PATH`; otherwise the module no-ops.
+- Add `prelude-corfu` module: a modern, lightweight in-buffer completion stack ([corfu](https://github.com/minad/corfu) + [cape](https://github.com/minad/cape)) -- alternative to `prelude-company`. Pairs naturally with the vertico/orderless setup in `prelude-vertico`.
+- Add `prelude-apheleia` module: enables [Apheleia](https://github.com/radian-software/apheleia) globally for async, flicker-free format-on-save (Prettier, Black, Ruff, gofmt, rustfmt, ...). Supersedes the per-language format hooks in modules like `prelude-rust` and `prelude-go`.
+
+### Changes
+
+- Tidy up `prelude-common-lisp`: drop stale `slime-autodoc-use-multiline-p` setting (the variable was removed from upstream SLIME; modern autodoc honors `eldoc-echo-area-use-multiline-p`), set `inferior-lisp-program` to `sbcl` so `M-x run-lisp` works without SLIME, and add `slime-quicklisp` to `slime-contribs` for Quicklisp integration.
+
+### Bugs fixed
+
+- Update `prelude-helm` to current upstream variable/function names: rename `helm-google-suggest-use-curl-p` to `helm-net-prefer-curl` (deprecated alias since helm 1.7.7), rename `helm-split-window-in-side-p` to `helm-split-window-inside-p` (deprecated alias since helm 2.8.6), drop `helm-ff-file-name-history-use-recentf` (removed from helm; behavior is now unconditional), and drop the `C-c w` binding to `helm-wikipedia-suggest` (function moved to a separate `helm-wikipedia` package).
+- Drop `C-c C-l` binding to `helm-comint-input-ring` in `prelude-helm-everywhere` -- that command was removed from upstream helm.
+- Replace stale `erc-autoaway-use-emacs-idle` setting in `prelude-erc` with `(setq erc-autoaway-idle-method 'emacs)` (the old variable was removed; idle source is now selected via `erc-autoaway-idle-method`).
+- Rebind `M-s m` from removed `consult-multi-occur` to built-in `multi-occur` in `prelude-vertico` (consult dropped the wrapper in favor of the built-in command).
+- [#1450](https://github.com/bbatsov/prelude/issues/1450): Remove broken `slime-complete-symbol-function` setting in `prelude-common-lisp` (referenced an undefined `slime-flex-completions` symbol; the variable itself has been obsolete since 2015).
+- Fix `prelude-ocaml` integration with `neocaml`: hook into `neocaml-base-mode` (so `.mli` files are covered), enable `ocaml-eglot-mode` properly, and call `prelude-lsp-enable` so the LSP server actually starts.
+- Use `ocaml-eglot-mode` instead of the obsolete `ocaml-eglot` alias (renamed in `ocaml-eglot` 1.4.0).
+- Add a temporary `eglot-server-programs` entry for `neocaml` so older `neocaml` versions still get `ocamllsp` started. Can be removed once `neocaml >= 20260331` is widely available on MELPA.
+- Drop `M-g e` and `M-g f` from `prelude-vertico`'s consult bindings so they no longer shadow the avy bindings (`avy-goto-word-0`, `avy-goto-line`) set in core. Bind `consult-compile-error` / `consult-flymake` in your personal config if you want them.
+
 ## 2.1.0 (2026-03-29)
 
 ### New features
