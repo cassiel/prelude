@@ -1,5 +1,8 @@
-;; (add-to-list 'package-archives
-;;             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;; Do a package-list-packages, then (although nongnu now seems to
+;; cover some of this):
+
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 ;; Manual install (MELPA):
 (require 'rainbow-delimiters)
